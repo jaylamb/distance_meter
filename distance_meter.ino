@@ -1,7 +1,3 @@
-/*********************************************************************
-This is 
-*********************************************************************/
-
 #include <SPI.h>
 #include <Wire.h>
 
@@ -11,59 +7,55 @@ This is
 #define VOLTAGE_TO_INCHES   0.009765625
 #define NUMBER_OF_AVERAGES  4096
 
-// Define SPI Pins
-#define OLED_RESET 8
+// SPI Pins
+#define OLED_RESET  8
 #define OLED_MOSI   9
 #define OLED_CLK   10
 #define OLED_DC    11
 #define OLED_CS    12
+
+// Conversion constants
+#define COUNTS_MAX 1023.0
+#define VOLTS_MAX     5.0
 
 Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 
 void setup()   {        
   Serial.begin(9600);
 
-  // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
   display.begin(SSD1306_SWITCHCAPVCC);
-  // init done
  
-  // Begin normal operation
-  display.setTextSize(4);
+  display.setTextSize(3);
   display.setTextColor(WHITE);
   
-  int sensorValue = 0;
-  double voltage = 0.0;
-  double distance = 0.0;
+  int    sensorValue    =   0;
+  double voltage        = 0.0;
+  double distance       = 0.0;
   double runningAverage = 0.0;
     
-  while(1){
+  while(true){
     
-    // Clear the buffer
     display.clearDisplay();
     
-    // Reset running average
-    double runningAverage = 0.0;
+    runningAverage = 0.0;
     
     for( int i = 0; i < NUMBER_OF_AVERAGES; i++ )
     {
-      // read the input on analog pin 0:
       sensorValue = analogRead(A0);
       
-      // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+      // convert the ADC reading to voltage
       voltage = sensorValue * (5.0 / 1023.0);
       
-      // Convert the voltage (0 - 5V) to a distance (inches)
+      // convert the voltage to a distance in inches
       distance = (voltage / VOLTAGE_TO_INCHES);
       
-      // Add distance value to running average
+      // add distance value to running average
       runningAverage += distance;
     }
     
-    // Calculate distance from sensor
     distance = runningAverage / NUMBER_OF_AVERAGES;
     
-    // Print distance
-    display.setCursor(0,20);
+    display.setCursor(20,5);
     display.println(distance);
     display.display();
     
@@ -72,4 +64,3 @@ void setup()   {
 
 void loop() {
 }
-
