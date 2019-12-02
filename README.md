@@ -10,15 +10,15 @@ software is located [here](https://github.com/jaylamb/distance_meter.git).
 
 ## Required Libraries 
 
-[Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306.git)
-[Adafruit-GFX-Library](https://github.com/adafruit/Adafruit-GFX-Library.git)
+* [Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306.git)
+* [Adafruit-GFX-Library](https://github.com/adafruit/Adafruit-GFX-Library.git)
 
 ## Usage
-Download and install the required libraries within ArduinoIDE, and download the
-project software. Setting the "board" within ArduinoIDE to "Arduino UNO" will
-allow ArduinoIDE to correctly identify the hardware. Upload the software to the
-Metro Mini. The distance from the SONAR range finder will begin to be reported.
-The distance will be updated indefinitely until power is removed from the
-system. 
+Download and install the required libraries within Arduino IDE and download the
+project software. Setting the "board" within Arduino IDE to "Arduino UNO" will
+allow Arduino IDE to correctly identify the hardware. Upload the software to
+the Metro Mini. The distance from the SONAR range finder will begin to be
+reported.  The distance will be updated indefinitely until power is removed
+from the system.
 
 ## License [Apache 2.0](http://www.apache.org/licenses/)
