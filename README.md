@@ -2,10 +2,10 @@
 
 Distance Meter is an Arduino project consisting of a single source file. Current
 software is located [here](https://github.com/jaylamb/distance_meter.git)
-Required hardware includes:
-	- 1x Adafruit Metro Mini (ATMEGA328P) 
-	- 1x MaxBotix LV-MaxSonar-EZ SONAR range finder
-	- 1x Adafruit 0.96" monochrome 128x64 OLED graphic display 
+###Required hardware:
+* 1x Adafruit Metro Mini (ATMEGA328P)
+* 1x MaxBotix LV-MaxSonar-EZ SONAR range finder
+* 1x Adafruit 0.96" monochrome 128x64 OLED graphic display
 
 ## Required Libraries 
 
