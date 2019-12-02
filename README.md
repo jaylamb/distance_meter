@@ -1,7 +1,7 @@
 # Distance Meter
 
 Distance Meter is an Arduino project consisting of a single source file. Current
-software is located [here](https://github.com/jaylamb/distance_meter.git)
+software is located [here](https://github.com/jaylamb/distance_meter.git).
 
 ### Required hardware:
 * 1x Adafruit Metro Mini (ATMEGA328P)
