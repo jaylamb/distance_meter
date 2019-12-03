@@ -42,12 +42,11 @@ void setup()   {
     for( int i = 0; i < NUMBER_OF_AVERAGES; i++ )
     {
       sensorValue = analogRead(A0);
-      
       // convert the ADC reading to voltage
-      voltage = sensorValue * (5.0 / 1023.0);
+      voltage = sensorValue * (VOLTS_MAX / COUNTS_MAX);
       
       // convert the voltage to a distance in inches
-      distance = (voltage / VOLTAGE_TO_INCHES);
+      distance = voltage / VOLTAGE_TO_INCHES;
       
       // add distance value to running average
       runningAverage += distance;
