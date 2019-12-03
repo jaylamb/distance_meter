@@ -5,7 +5,7 @@
 #include <Adafruit_SSD1306.h>
 
 #define VOLTAGE_TO_INCHES   0.009765625
-#define NUMBER_OF_AVERAGES  4096
+#define NUMBER_OF_AVERAGES  2048
 
 // SPI Pins
 #define OLED_RESET  8
